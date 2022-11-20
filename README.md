@@ -15,6 +15,8 @@ Single page app to display API data from <https://pokeapi.co/docs/v2#pokemon> an
 
 If I had more time, I would like to render more stats about each Pokemon, add more filters and improve the styling - for example color the card based on the Pokemon type i.e. Red for type: fire.
 
+Note: search does not work on chrome mobile version - seems the keyup, keypress, change etc. events are not supported. 
+
 ## Technologies
 
 - Angular 14
