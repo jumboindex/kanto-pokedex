@@ -5,7 +5,7 @@
                     placeholder="Search"
                     type="text"
                     [(ngModel)]="searchTerm"
-                    (input)="handleSearch()"
+                    (keypress)="handleSearch()"
                     />
         </mat-card-title>
         <mat-divider></mat-divider>
