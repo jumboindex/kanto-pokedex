@@ -1,0 +1,37 @@
+<section class="outer-container">
+    <mat-card>
+        <mat-card-title>Pokedex
+            <input  name="search"
+                    placeholder="Search"
+                    type="text"
+                    [(ngModel)]="searchTerm"
+                    (input)="handleSearch()"
+                    />
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <div >
+            <mat-spinner *ngIf="(isLoading$ | async)"> </mat-spinner>
+            <div *ngIf="(error$ | async)"> Error...</div>
+            <div *ngIf="(search$ | async) as searchData"> 
+                <app-pokemon-cards *ngFor="let pokemon of searchData"
+                                [name]="pokemon.name"
+                                [url]="pokemon.url"
+                                class="pokemon-cards">
+                </app-pokemon-cards>
+            </div>
+            <div *ngIf="!searchTerm"> 
+                <div *ngIf="(pokemonData$ | async) as pokemonData"
+                    class="pokemon-container"> 
+                    <app-pokemon-cards *ngFor="let pokemon of pokemonData.results"
+                                    [name]="pokemon.name"
+                                    [url]="pokemon.url"
+                                    class="pokemon-cards">
+                    </app-pokemon-cards>
+                </div>
+            </div>              
+        </div>
+    </mat-card>
+</section>
+
+
+

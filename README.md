@@ -1,27 +1,30 @@
-# KantoPokedex
+# Kanto Pokedex App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+## Table of contents
 
-## Development server
+- [Kanto Pokedex App](#kanto-pokedex-app)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Technologies](#technologies)
+  - [Status](#status)
+  - [Tests](#tests)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## General info
 
-## Code scaffolding
+Single page app to display API data from <https://pokeapi.co/docs/v2#pokemon> and display the first 151 pokemon. I'm not happy with the way i'm fetching pokemon stats and ideally would like to add this dynamically to the Store, however this was proving to be tricky and costing time. To keep it simple, each Pokemon card maintains it's own state - however this means there is an API call each time a card renders which is inefficient. Storing the data in an Entity would have resolved this.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If I had more time, I would like to render more stats about each Pokemon, add more filters and improve the styling - for example color the card based on the Pokemon type i.e. Red for type: fire.
 
-## Build
+## Technologies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular 14
+- NgRx
+- Angular Material
 
-## Running unit tests
+## Status
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Project is: alpha v0.1
 
-## Running end-to-end tests
+## Tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Definitely needs more unit and integration tests.

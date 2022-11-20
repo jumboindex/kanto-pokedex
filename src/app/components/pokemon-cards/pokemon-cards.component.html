@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-divider class="divider"></mat-divider>
+    <ng-container *ngIf="State$ | async as state">
+        <mat-card-content>      
+            <mat-spinner *ngIf="state.isLoading" [diameter]="45"></mat-spinner>
+            <div *ngIf="state.error"> error...</div>
+            <div class="data-container" *ngIf="state.data as data">
+                <mat-spinner *ngIf="imageLoad" [diameter]="45"></mat-spinner>
+                <img src="{{data.sprites.front_default}}" (load)="imageLoad = false"/>
+                <section>
+                    <div class="container">
+                        <span >Height: {{data.height}}</span>
+                        <span> Weight: {{data.weight}} </span>
+                    </div>
+                    <div class="container">
+                        <span> Type: </span>
+                        <span *ngFor="let type of data.types">
+                            {{type.type.name}}
+                        </span>
+                    </div>    
+                    <div class="container">
+                        <span> Abilities: </span>
+                        <span *ngFor="let ability of data.abilities">
+                            {{ability.ability.name }}
+                        </span>
+                    </div>
+                </section>
+            </div>   
+        </mat-card-content>
+    </ng-container>
+</mat-card>
+    
+    
+    

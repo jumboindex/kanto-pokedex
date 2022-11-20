@@ -1,0 +1,14 @@
+.data-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+span {
+    margin: 5px;
+}
